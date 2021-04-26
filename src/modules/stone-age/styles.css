@@ -15,19 +15,19 @@
 }
 
 .red-cursor{
-    cursor: url("../../resources/circle-red.svg"), auto;
+    cursor: url("../../resources/circle-red.svg") 16 16, auto;
 }
 
 .green-cursor{
-    cursor: url("../../resources/circle-green.svg"), auto;
+    cursor: url("../../resources/circle-green.svg") 16 16, auto;
 }
 
 .blue-cursor{
-    cursor: url("../../resources/circle-blue.svg"), auto;
+    cursor: url("../../resources/circle-blue.svg") 16 16, auto;
 }
 
 .yellow-cursor{
-    cursor: url("../../resources/circle-yellow.svg"), auto;
+    cursor: url("../../resources/circle-yellow.svg") 16 16, auto;
 }
 
 
