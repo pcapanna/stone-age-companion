@@ -1,0 +1,35 @@
+.cross-container:before, .cross-container:after {
+    position: absolute;
+    background-color: var(--cross-color)    ;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 8px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.cross-container:after {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cross-container {
+    position: relative;
+    overflow: hidden;
+}
