@@ -30,7 +30,6 @@ class MockProductsApi {
     //   .catch(err => {
     //     console.log(err);
     //   });
-    debugger;
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(mockProductos);

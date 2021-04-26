@@ -16,12 +16,12 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const StoneAgeContainer = ({title, children, ...rest}: { title: string, children? } & Record<string, any>) => {
+const StoneAgeContainer = ({title, children, className,...rest}: { title: string, children? } & Record<string, any>) => {
 
   const classes = useStyles();
 
   return (
-    <div className={classes.root} {...rest}>
+    <div className={classes.root+" "+className}>
       <StoneAgeAppBar title={title}/>
       <DrawerMenu>
         {children}

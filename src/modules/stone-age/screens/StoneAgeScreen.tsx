@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import StoneAgeBoard from "../components/StoneAgeBoard";
 import StoneAgeContainer from "../components/StoneAgeContainer";
 import "../styles.css"
-import {defaultState, StoneAgeContext, StoneAgeState} from '../context/useStoneAgeState';
+import {useRecoilState} from "recoil";
+import {selectedPlayerState} from "../recoil";
 
 
 const StoneAgeScreen = () => {
 
-  const [contextState, setContextState] = useState<StoneAgeState>(defaultState);
+  // const [selectedPlayer] = useRecoilState(selectedPlayerState);
 
   return (
-    <StoneAgeContext.Provider value={[contextState, (newValues) =>
-      setContextState({...contextState, ...newValues})]}>
-      <StoneAgeContainer title={"Stone Age Companion"} style={{}}>
+      <StoneAgeContainer title={"Stone Age Companion"}
+                         // className={selectedPlayer?.containerClassName}
+      >
         <StoneAgeBoard/>
       </StoneAgeContainer>
-    </StoneAgeContext.Provider>
   );
 };
 

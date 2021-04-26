@@ -8,35 +8,38 @@ import muiTheme from "./configuration/createMaterialTheme";
 import {actions as appActions, AppRouter} from "./modules/app";
 import {ToastContainer} from "react-toastify";
 import i18n from './configuration/i18n';
+import {RecoilRoot} from "recoil";
 
 const generateClassName = createGenerateClassName({
-    disableGlobal: true,
-    productionPrefix: "MYCV",
-    seed: "MYCV"
+  disableGlobal: true,
+  productionPrefix: "MYCV",
+  seed: "MYCV"
 });
 
 function App() {
 
-    useEffect(() => {
-        store.dispatch(appActions.bootstrapRequest());
-    });
+  useEffect(() => {
+    store.dispatch(appActions.bootstrapRequest());
+  });
 
-    const currentLanguage = i18n.language;
+  const currentLanguage = i18n.language;
 
-    return (
-        <div className="App">
-            <Provider store={store}>
-                <StylesProvider injectFirst={false} generateClassName={generateClassName}>
-                    <ThemeProvider theme={muiTheme}>
-                        {/*<MuiThemeProvider theme={muiTheme}>*/}
-                        <AppRouter/>
-                        <ToastContainer newestOnTop={true}/>
-                        {/*</MuiThemeProvider>*/}
-                    </ThemeProvider>
-                </StylesProvider>
-            </Provider>
-        </div>
-    );
+  return (
+    <div className="App">
+      <RecoilRoot>
+        <Provider store={store}>
+          <StylesProvider injectFirst={false} generateClassName={generateClassName}>
+            <ThemeProvider theme={muiTheme}>
+              {/*<MuiThemeProvider theme={muiTheme}>*/}
+              <AppRouter/>
+              <ToastContainer newestOnTop={true}/>
+              {/*</MuiThemeProvider>*/}
+            </ThemeProvider>
+          </StylesProvider>
+        </Provider>
+      </RecoilRoot>
+    </div>
+  );
 }
 
 export default App;

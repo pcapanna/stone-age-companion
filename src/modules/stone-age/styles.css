@@ -1,6 +1,6 @@
 .cross-container:before, .cross-container:after {
     position: absolute;
-    background-color: var(--cross-color)    ;
+    background-color: var(--cross-color);
     content: '';
     display: block;
     width: 100%;
@@ -12,6 +12,31 @@
     top: 0;
     bottom: 0;
     margin: auto;
+}
+
+.red-cursor{
+    cursor: url("../../resources/circle-red.svg"), auto;
+}
+
+.green-cursor{
+    cursor: url("../../resources/circle-green.svg"), auto;
+}
+
+.blue-cursor{
+    cursor: url("../../resources/circle-blue.svg"), auto;
+}
+
+.yellow-cursor{
+    cursor: url("../../resources/circle-yellow.svg"), auto;
+}
+
+
+.card-container{
+    display: flex;
+    flex-grow: 1;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .noselect {
