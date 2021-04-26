@@ -5,7 +5,6 @@
     "node" : "15.x"
   },
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
