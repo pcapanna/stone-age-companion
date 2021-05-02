@@ -1,6 +1,7 @@
 .cross-container:before, .cross-container:after {
     position: absolute;
     background-color: var(--cross-color);
+    border: 1px double black;
     content: '';
     display: block;
     width: 100%;
@@ -12,6 +13,11 @@
     top: 0;
     bottom: 0;
     margin: auto;
+}
+
+.cross-container.blur-container:before, .cross-container.blur-container:after {
+    width: 45%;
+    height: 4px;
 }
 
 .red-cursor{
@@ -52,6 +58,12 @@
 .cross-container:after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+.blur-container{
+    background: #282c34;
+    border: 1px dashed #4c4c4c;
+    border-radius: 10px;
 }
 
 .cross-container {

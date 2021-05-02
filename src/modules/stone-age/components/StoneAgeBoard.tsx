@@ -4,7 +4,7 @@ import _ from "lodash";
 import useMarkCardAsUsed from "../hooks/useMarkCardAsUsed";
 import useMarkCardAsUnused from "../hooks/useMarkCardAsUnused";
 import {useRecoilState} from "recoil";
-import {selectedPlayerState, usedCardState} from "../recoil";
+import {selectedPlayerState, cardsBlurredState, usedCardState} from "../recoil";
 import {CardPosition} from "../typings";
 
 
@@ -12,6 +12,7 @@ const StoneAgeBoard = () => {
 
   const [usedCards] = useRecoilState(usedCardState);
   const [selectedPlayer] = useRecoilState(selectedPlayerState);
+  const [cardsBlurred] = useRecoilState(cardsBlurredState);
 
   const markCardAsUsed = useMarkCardAsUsed();
   const markCardAsUnused = useMarkCardAsUnused();
@@ -44,8 +45,15 @@ const StoneAgeBoard = () => {
           }}>
             {_.range(0, 3).map((positionY) => {
                 const playerOwningCard = _.get(usedCards, `${positionX}.${positionY}`);
+                let className = "card-container";
+                if (playerOwningCard){
+                  className+= " cross-container";
+                  if (cardsBlurred){
+                    className+= " blur-container";
+                  }
+                }
                 return (
-                  <div className={`card-container ${playerOwningCard ? "cross-container" : ""}`}
+                  <div className={className}
                        onClick={(event) =>
                          handleClickCard(event, {x: positionX, y: positionY})}
                        onContextMenu={(event) => {

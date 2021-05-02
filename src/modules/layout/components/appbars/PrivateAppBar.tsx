@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme: Theme) =>
     sectionDesktop: {
       display: 'flex',
       [theme.breakpoints.up('md')]: {
-        justifyContent: 'space-between',
-        flexGrow: 0.01,
+        justifyContent: 'flex-end',
+        flexGrow: 1,
       },
     },
     sectionMobile: {
@@ -50,7 +50,7 @@ const PrivateAppBar = ({title = "Meetups", children}: { title: string; children?
         handleOpen: handleOpenDrawerMenu,
         open: drawerMenuOpen
       }}>
-        <div className={classes.grow}/>
+        {/*<div className={classes.grow}/>*/}
         <div className={classes.sectionDesktop}>
           {children ? children : (<>
             <IconButton aria-label="add meetup" color="inherit"
